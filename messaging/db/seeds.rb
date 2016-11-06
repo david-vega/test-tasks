@@ -18,7 +18,8 @@ unless SmsMessage.any?
 
   # First, we replicate the screenshot
   account.sms_messages.create(
-    outbound: true, from_number: "4804331197",
+    outbound: true,
+    from_number: "4804331197",
     to_number: "8006927753",
     body: "This is a friendly reminder, respond YES or NO",
     created_at: 8.days.ago)
@@ -63,5 +64,22 @@ unless SmsMessage.any?
     to_number: "8006927754",
     body: "You were unsubscribed successfully.",
     created_at: 2.days.ago)
-
+  account.sms_messages.create(
+      outbound: true,
+      from_number: "4564857895",
+      to_number: "4578421365",
+      body: "You were unsubscribed successfully.",
+      created_at: 2.days.ago)
+  account.sms_messages.create(
+      outbound: true,
+      from_number: "4875961254",
+      to_number: "7845125478",
+      body: "You were unsubscribed successfully.",
+      created_at: 2.days.ago)
+  account.sms_messages.create(
+      outbound: true,
+      from_number: "2345675659",
+      to_number: "7845125478",
+      body: "You were unsubscribed successfully.",
+      created_at: 2.days.ago)
 end

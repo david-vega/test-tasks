@@ -1,5 +1,5 @@
 class SmsMessagesController < ApplicationController
   def index
-    @sms_messages = @account.sms_messages.sorted.includes([:user, :account]).all
+    @threads = @account.sms_messages.sorted.includes([:user, :account]).all.group_by{ |sms| [sms.to_number, sms.from_number] }
   end
 end
