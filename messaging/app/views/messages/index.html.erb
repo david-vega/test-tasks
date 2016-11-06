@@ -3,10 +3,10 @@
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 
-<div id="sms_messages"></div>
+<div id="messages"></div>
 
 <script type="text/javascript">
   $(document).ready(function() {
-    OnboardiqTestMessages.startApplication({smsMessages: <%= @threads.to_json.html_safe -%>});
+    OnboardiqTestMessages.startApplication();
   });
 </script>

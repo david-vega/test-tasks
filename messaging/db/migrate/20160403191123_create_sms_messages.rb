@@ -14,9 +14,9 @@ class CreateSmsMessages < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :sms_messages, :from_number
-    add_index :sms_messages, :to_number
+    add_index :messages, :from_number
+    add_index :messages, :to_number
 
-    add_index :sms_messages, :created_at
+    add_index :messages, :created_at
   end
 end

@@ -1,6 +1,6 @@
 OnboardiqTestMessages.Views.SmsMessages ||= {}
 
-class OnboardiqTestMessages.Views.SmsMessages.IndexView extends Backbone.View
+class OnboardiqTestMessages.Views.SmsMessages.IndexView extends OnboardiqTestMessages.Views.Base
   template: JST["backbone/templates/sms_messages/index"]
 
   initialize: () ->

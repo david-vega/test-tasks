@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'dashboard#index'
 
-  resources :sms_messages, only: [:index]
+  resources :messages, only: [:index]
   namespace :api do
     resources :threads
   end

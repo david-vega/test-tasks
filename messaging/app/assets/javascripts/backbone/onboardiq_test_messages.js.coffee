@@ -10,6 +10,6 @@ window.OnboardiqTestMessages =
   Routers: {}
   Views: {}
 
-  startApplication: (params) ->
-    window.router = new OnboardiqTestMessages.Routers.SmsMessagesRouter(params)
+  startApplication: ->
+    window.router = new OnboardiqTestMessages.Routers.MessagesRouter()
     Backbone.history.start pushState: true
