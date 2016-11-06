@@ -19,6 +19,8 @@ gem 'twitter-bootstrap-rails'
 # Literally just to render the dashboard
 gem 'redcarpet'
 
+gem 'rails-backbone'
+
 group :development, :test do
   gem 'quiet_assets'
   
