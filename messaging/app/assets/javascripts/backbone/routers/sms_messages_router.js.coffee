@@ -4,7 +4,7 @@ class OnboardiqTestMessages.Routers.SmsMessagesRouter extends Backbone.Router
     @smsMessages.reset options.smsMessages
 
   routes:
-    'sms_messages' : 'index'
+    'sms_messages(/)' : 'index'
 
   index: ->
     @view = new OnboardiqTestMessages.Views.SmsMessages.IndexView(collection: @smsMessages)

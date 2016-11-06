@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   root 'dashboard#index'
 
   resources :sms_messages, only: [:index]
+  namespace :api do
+    resources :threads
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
