@@ -10,8 +10,8 @@ class OnboardiqTestMessages.Views.SmsMessages.IndexView extends OnboardiqTestMes
     @collection.each(@addOne)
 
   addOne: (smsMessage) =>
-    view = new OnboardiqTestMessages.Views.SmsMessages.SmsMessageView({model : smsMessage})
-    @$('div').append(view.render().el)
+    view = new OnboardiqTestMessages.Views.SmsMessages.SmsMessageView({ model : smsMessage })
+    @$('.content').append(view.render().el)
 
   render: =>
     @$el.html(@template(smsMessages: @collection.toJSON() ))
