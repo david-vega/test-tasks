@@ -1,7 +1,7 @@
 OnboardiqTestMessages.Views.Threads ||= {}
 
 class OnboardiqTestMessages.Views.Threads.IndexView extends OnboardiqTestMessages.Views.Base
-  template: JST["backbone/templates/threads/index"]
+  template: JST['backbone/templates/threads/index']
 
   el: '#messages'
 

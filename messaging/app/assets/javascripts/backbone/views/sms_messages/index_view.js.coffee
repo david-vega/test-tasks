@@ -1,7 +1,7 @@
 OnboardiqTestMessages.Views.SmsMessages ||= {}
 
 class OnboardiqTestMessages.Views.SmsMessages.IndexView extends OnboardiqTestMessages.Views.Base
-  template: JST["backbone/templates/sms_messages/index"]
+  template: JST['backbone/templates/sms_messages/index']
 
   initialize: () ->
     @collection.bind('reset', @addAll)
@@ -11,7 +11,7 @@ class OnboardiqTestMessages.Views.SmsMessages.IndexView extends OnboardiqTestMes
 
   addOne: (smsMessage) =>
     view = new OnboardiqTestMessages.Views.SmsMessages.SmsMessageView({model : smsMessage})
-    @$("tbody").append(view.render().el)
+    @$('div').append(view.render().el)
 
   render: =>
     @$el.html(@template(smsMessages: @collection.toJSON() ))
