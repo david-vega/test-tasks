@@ -13,7 +13,7 @@ class OnboardiqTestMessages.Views.Threads.IndexView extends OnboardiqTestMessage
 
   addOne: (thread) =>
     view = new OnboardiqTestMessages.Views.Threads.ThreadView({model : thread})
-    @$("tbody").append(view.render().el)
+    @$('#threads-list').append(view.render().el)
 
   render: =>
     @$el.html(@template(smsMessages: @collection.toJSON() ))
