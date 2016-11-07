@@ -1,5 +1,5 @@
 class SmsMessage < ActiveRecord::Base
-  BATCH_SIZE = 20
+  BATCH_SIZE = 30
   belongs_to :account
   validates :account, presence: true
 
@@ -15,7 +15,9 @@ class SmsMessage < ActiveRecord::Base
 
   def self.mark_thread_as_read!(thread_uuid:)
     SmsMessage.thread(thread_uuid).unread.find_in_batches(batch_size: BATCH_SIZE) do |sms_messages|
-      sms_messages.each{ |sms_message| sms_message.update_attribute(:unread, false) }
+      SmsMessage.transaction do
+        sms_messages.each{ |sms_message| sms_message.update_attribute(:unread, false) }
+      end
     end
   end
 
