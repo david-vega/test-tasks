@@ -8,13 +8,13 @@ class Api::ThreadsController < Api::BaseController
   end
 
   def update
-    SmsMessage.mark_thread_as_read!(thread_params)
+    SmsMessage.mark_thread_as_read!(thread_uuid: thread_params)
     render json: { message: 'success' }, status: :ok
   end
 
   private
 
   def thread_params
-    params.require(:sms_message).permit(:thread_uuid)
+    params.permit(:id)[:id]
   end
 end
