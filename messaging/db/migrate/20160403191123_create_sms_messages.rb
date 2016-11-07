@@ -6,17 +6,17 @@ class CreateSmsMessages < ActiveRecord::Migration
 
       t.string :from_number
       t.string :to_number
+      t.string :thread_uuid, index: true, null: false
       t.text :body
 
       t.boolean :outbound, null: false, default: false
       t.boolean :unread, null: false, default: true
-
       t.timestamps
     end
 
-    add_index :messages, :from_number
-    add_index :messages, :to_number
+    add_index :sms_messages, :from_number
+    add_index :sms_messages, :to_number
 
-    add_index :messages, :created_at
+    add_index :sms_messages, :created_at
   end
 end

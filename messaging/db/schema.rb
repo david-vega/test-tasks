@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160403191123) do
     t.integer  "user_id"
     t.string   "from_number"
     t.string   "to_number"
+    t.string   "thread_uuid",                 null: false
     t.text     "body"
     t.boolean  "outbound",    default: false, null: false
     t.boolean  "unread",      default: true,  null: false
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160403191123) do
   add_index "sms_messages", ["account_id"], name: "index_sms_messages_on_account_id", using: :btree
   add_index "sms_messages", ["created_at"], name: "index_sms_messages_on_created_at", using: :btree
   add_index "sms_messages", ["from_number"], name: "index_sms_messages_on_from_number", using: :btree
+  add_index "sms_messages", ["thread_uuid"], name: "index_sms_messages_on_thread_uuid", using: :btree
   add_index "sms_messages", ["to_number"], name: "index_sms_messages_on_to_number", using: :btree
   add_index "sms_messages", ["user_id"], name: "index_sms_messages_on_user_id", using: :btree
 
